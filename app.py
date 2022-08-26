@@ -198,14 +198,14 @@ def order(oid: int):
     elif request.method == "PUT":
         order_data = json.loads(request.data)
         u = Order.query.get(oid)
-        u.name = order_data["order_data"]
-        u.description = order_data["order_data"]
-        u.start_date = order_data["order_data"]
-        u.end_date = order_data["order_data"]
-        u.address = order_data["order_data"]
-        u.price = order_data["order_data"]
-        u.customer_id = order_data["order_data"]
-        u.executor_id = order_data["order_data"]
+        u.name = order_data["name"]
+        u.description = order_data["description"]
+        u.start_date = order_data["start_date"]
+        u.end_date = order_data["end_date"]
+        u.address = order_data["address"]
+        u.price = order_data["price"]
+        u.customer_id = order_data["customer_id"]
+        u.executor_id = order_data["executor_id"]
 
         db.session.add(u)
         db.session.commit()
